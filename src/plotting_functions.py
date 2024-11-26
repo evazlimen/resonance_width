@@ -12,7 +12,7 @@ import warnings
 
 #used in plot_runs():
 import matplotlib.pyplot as plt
-plt.style.use("/Library/Frameworks/Python.framework/versions/3.13/lib/python3.13/site-packages/matplotlib/style/my_style.mplstyle")
+plt.style.use("/plotting/my_style.mplstyle")
 
 
 def colored_line(x, y, c, ax, **lc_kwargs):
