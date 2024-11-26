@@ -7,7 +7,7 @@ Script containing the numerical integration functions
 
 #imports
 from scipy.integrate import solve_ivp
-
+import numpy as np
 
 def rhs(t, eqns, j, beta, mu_prime, tau_n, tau_e, p, nprime):
     """

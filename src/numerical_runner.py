@@ -3,9 +3,9 @@ Script to perform and plot the numerical integration
 """
 #imports
 import numpy as np
-import helper_functions.py
-import plotting_functions.py
-import integration_functions.py
+from helper_functions import *
+from plotting_functions import *
+from integration_functions import *
 
 #constants that we literally never change
 #define some initial conditions
@@ -24,15 +24,15 @@ beta = 0.8*j #disturbing function thing
 
 #integration constants
 t_initial = 0
-t_final = 2e7
-stepsize = 500
+t_final = 2e2
+stepsize = 10
 rtol_param = 1e-6 # parameter to control accuracy of solution in solve_ivp
 
 
 #how many tau ratios are we doing:
-number = 16
+number = 2
 #how many steps on either side outside of the theory lines are we looking at:
-number_outside = 3
+number_outside = 0
 
 #constants that we do change sometimes
 tau_n=10**7/nprime #migration timescale
@@ -52,5 +52,5 @@ path = "/Users/evazlimen/Documents/research/resonance_width/plots/"
 # %%
 for i in range(len(tau_rat_vals)):
     tau_e = tau_rat_vals[i]*tau_n
-    res = integrate(rhs, t_span, initials, t_eval,j,beta,mu_prime,tau_n,tau_e,p,nprime)
-    plot_runs(res, tau_n, n_initial, mu_prime, tau_rat_vals[i], t_final, j, beta, t_eval, nprime)
+    res = integrate(rhs, t_span, initials, t_eval,j,beta,mu_prime,tau_n,tau_e,p,nprime, rtol_param)
+    plot_runs(res, tau_n, n_initial, mu_prime, tau_rat_vals[i], t_final, j, beta, t_eval, nprime, path)

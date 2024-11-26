@@ -2,6 +2,9 @@
 helper_functions.py
 Script containing the helper functions to run the numerical integration
 """
+#imports
+import numpy as np
+
 
 def func_muprime_min(j,beta,taue_taun):
     """

@@ -4,6 +4,8 @@ Script containing the plotting functions to plot results of numerical integratio
 """
 
 #imports:
+import numpy as np
+from helper_functions import func_e_eq, func_sin_phi_eq
 
 #used in colored_line():
 from matplotlib.collections import LineCollection
@@ -12,7 +14,7 @@ import warnings
 
 #used in plot_runs():
 import matplotlib.pyplot as plt
-plt.style.use("/plotting/my_style.mplstyle")
+plt.style.use("../plotting/my_style.mplstyle")
 
 
 def colored_line(x, y, c, ax, **lc_kwargs):
